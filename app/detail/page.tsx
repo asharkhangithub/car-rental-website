@@ -79,8 +79,8 @@ const page = () => {
       </div>
       {/* Car Description */}
       <p className="text-gray-600 mt-4">
-        NISMO has become the embodiment of Nissan's outstanding performance,
-        inspired by the most unforgiving proving ground, the "race track."
+        NISMO has become the embodiment of Nissans outstanding performance,
+        inspired by the most unforgiving proving ground, the race track.
       </p>
       {/* Car Specifications */}
       <div className="grid grid-cols-2 gap-4 mt-6">
