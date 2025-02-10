@@ -3,9 +3,10 @@
 import { useState, useEffect, useCallback } from "react"
 
 import ProductCard from "./ProductCard"
-import SearchBar from "./SearchBar"
+// import SearchBar from "./SearchBar"
 import CategoryComponent from "./CategoryComponent"
 import { client } from "@/sanity/lib/sanity"
+import SearchBar from "./SearchBar"
 
 
 async function getCars(): Promise<Car[]> {
