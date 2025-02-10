@@ -1,49 +1,36 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-white border-t">
+    <footer className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              MORENT
-            </Link>
-            <p className="mt-4 text-sm text-gray-500">
-              Our vision is to provide convenience and help increase your sales business.
-            </p>
+            <h3 className="text-xl font-bold mb-4">Car Rental</h3>
+            <p>Rent your dream car today</p>
           </div>
           <div>
-            <h3 className="font-semibold mb-4">About</h3>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">How it works</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Featured</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Partnership</Link></li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-4">Community</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Events</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Blog</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Podcast</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Socials</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Discord</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Instagram</Link></li>
-              <li><Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Twitter</Link></li>
-            </ul>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <p>Email: info@carrental.com</p>
+            <p>Phone: +1 234 567 8900</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500">©2023 MORENT. All rights reserved</p>
-          <div className="mt-4 md:mt-0 flex space-x-4">
-            <Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Privacy & Policy</Link>
-            <Link href="#" className="text-sm text-gray-500 hover:text-gray-700">Terms & Condition</Link>
-          </div>
+        <div className="mt-8 text-center">
+          <p>&copy; 2023 Car Rental. All rights reserved.</p>
         </div>
       </div>
     </footer>

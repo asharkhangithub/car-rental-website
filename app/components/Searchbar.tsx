@@ -1,39 +1,32 @@
 'use client'
 
-import { MapPinIcon, CalendarIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import React, { useState } from 'react'
+import { Search } from 'lucide-react'
 
-export function Searchbar() {
-  return (
-    <div className="bg-white rounded-lg shadow p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="flex items-center space-x-2">
-          <MapPinIcon className="h-5 w-5 text-blue-600" />
-          <input
-            type="text"
-            placeholder="Location"
-            className="w-full p-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="flex items-center space-x-2">
-          <CalendarIcon className="h-5 w-5 text-blue-600" />
-          <input
-            type="date"
-            className="w-full p-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="flex items-center space-x-2">
-          <CalendarIcon className="h-5 w-5 text-blue-600" />
-          <input
-            type="time"
-            className="w-full p-2 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 flex items-center justify-center">
-          <MagnifyingGlassIcon className="h-5 w-5 mr-2" />
-          Search
-        </button>
-      </div>
-    </div>
-  )
+interface SearchBarProps {
+  onSearch: (term: string) => void;
 }
 
+export default function SearchBar({ onSearch }: SearchBarProps) {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    onSearch(searchTerm)
+  }
+
+  return (
+    <form onSubmit={handleSearch} className="flex items-center bg-white shadow-md rounded-lg overflow-hidden my-4">
+      <input
+        type="text"
+        placeholder="Search for cars..."
+        value={searchTerm}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
+        className="flex-grow px-4 py-2 focus:outline-none"
+      />
+      <button type="submit" className="bg-blue-500 text-white p-2 hover:bg-blue-600">
+        <Search size={24} />
+      </button>
+    </form>
+  )
+}
