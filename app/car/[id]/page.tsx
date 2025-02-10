@@ -1,5 +1,3 @@
-
-
 import CarDetailClient from "@/app/components/CarDetailClient"
 import { client } from "@/sanity/lib/client"
 
@@ -20,7 +18,12 @@ async function getCar(id: string) {
   return client.fetch(query, { id })
 }
 
-export default async function CarDetailPage({ params }: { params: { id: string } }) {
+// Explicitly define props type
+interface CarDetailPageProps {
+  params: { id: string }
+}
+
+export default async function CarDetailPage({ params }: CarDetailPageProps) {
   const car = await getCar(params.id)
 
   if (!car) {
@@ -29,4 +32,3 @@ export default async function CarDetailPage({ params }: { params: { id: string }
 
   return <CarDetailClient car={car} />
 }
-
