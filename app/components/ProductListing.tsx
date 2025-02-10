@@ -6,7 +6,8 @@ import ProductCard from "./ProductCard"
 // import SearchBar from "./SearchBar"
 import CategoryComponent from "./CategoryComponent"
 import { client } from "@/sanity/lib/sanity"
-import SearchBar from "./SearchBar"
+import SearchBarr from "./SearchBar"
+
 
 
 async function getCars(): Promise<Car[]> {
@@ -93,7 +94,7 @@ export default function ProductListing() {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearch} />
+      <SearchBarr onSearch={handleSearch} />
       <CategoryComponent onCategoryChange={handleCategoryChange} />
       {filteredCars.length === 0 ? (
         <div className="text-center py-8">
