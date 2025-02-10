@@ -121,7 +121,7 @@ export interface Car {
   type: string
   pricePerDay: number
   originalPrice?: number
-  image: any // Sanity image type
+  image: string // Sanity image type
   fuelCapacity?: string
   transmission?: string
   seatingCapacity?: string
