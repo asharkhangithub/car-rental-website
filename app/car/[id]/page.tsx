@@ -1,5 +1,5 @@
-import CarDetailClient from "@/app/components/CarDetailClient"
-import { client } from "@/sanity/lib/client"
+import CarDetailClient from "@/app/components/CarDetailClient";
+import { client } from "@/sanity/lib/client";
 
 async function getCar(id: string) {
   const query = `*[_type == "car" && _id == $id][0] {
@@ -14,21 +14,21 @@ async function getCar(id: string) {
     originalPrice,
     tags,
     image
-  }`
-  return client.fetch(query, { id })
+  }`;
+  return client.fetch(query, { id });
 }
 
-// Explicitly define props type
+// Ensure `params` is correctly typed
 interface CarDetailPageProps {
-  params: { id: string }
+  params: { id: string };
 }
 
 export default async function CarDetailPage({ params }: CarDetailPageProps) {
-  const car = await getCar(params.id)
+  const car = await getCar(params.id);
 
   if (!car) {
-    return <div>Car not found</div>
+    return <div>Car not found</div>;
   }
 
-  return <CarDetailClient car={car} />
+  return <CarDetailClient car={car} />;
 }
