@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard"
 // import SearchBar from "./SearchBar"
 import CategoryComponent from "./CategoryComponent"
 import { client } from "@/sanity/lib/sanity"
-import SearchBarr from "./SearchBar"
+import SearchBarr from "./search"
 
 
 
