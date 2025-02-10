@@ -35,7 +35,7 @@ export default function ProductListing() {
   const [filteredCars, setFilteredCars] = useState<Car[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [activeCategory, setActiveCategory] = useState("All")
+  // const [activeCategory, setActiveCategory] = useState("All")
 
   const fetchCars = useCallback(async () => {
     try {
@@ -73,7 +73,7 @@ export default function ProductListing() {
 
   const handleCategoryChange = useCallback(
     (category: string) => {
-      setActiveCategory(category)
+      // setActiveCategory(category)
       if (category === "All") {
         setFilteredCars(cars)
       } else {
