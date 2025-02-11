@@ -5,8 +5,25 @@ import { useState, useEffect, useCallback } from "react"
 import ProductCard from "./ProductCard"
 // import SearchBar from "./SearchBar"
 import CategoryComponent from "./CategoryComponent"
-import { client } from "@/sanity/lib/sanity"
+
 import SearchBarr from "./search"
+
+import { client } from "../../sanity/lib/client"
+
+export interface Car {
+  _id: string;
+  name: string;
+  brand: string;
+  type: string;
+  fuelCapacity: number;  // ✅ Change string → number
+  transmission: string;
+  seatingCapacity: number;
+  pricePerDay: number;
+  originalPrice: number;
+  tags: string[];
+  image: string;
+}
+
 
 
 
@@ -114,15 +131,4 @@ export default function ProductListing() {
 
 
 
-export interface Car {
-  _id: string
-  name: string
-  brand: string
-  type: string
-  pricePerDay: number
-  originalPrice?: number
-  image: string // Sanity image type
-  fuelCapacity?: string
-  transmission?: string
-  seatingCapacity?: string
-}
+

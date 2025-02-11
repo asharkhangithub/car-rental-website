@@ -1,11 +1,12 @@
 "use client"
 
-import { urlForImage } from "@/sanity/lib/sanity"
+
 import Image from "next/image"
 
 
 import Link from "next/link"
 import { Car } from "./ProductListing"
+import { urlForImage } from "../../sanity/lib/sanity"
 
 interface ProductCardProps {
   car: Car
@@ -14,7 +15,7 @@ interface ProductCardProps {
 export default function ProductCard({ car }: ProductCardProps) {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col">
-      <div className="relative w-full aspect-[3/2] bg-white">
+      <div className= "relative w-full aspect-[3/2] bg-white">
         <Image
           src={urlForImage(car.image).url() || "/placeholder.svg"}
           alt={car.name}

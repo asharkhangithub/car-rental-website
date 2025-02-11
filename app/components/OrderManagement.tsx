@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { getOrders, type Order } from "@/sanity/lib/sanity"
+import { getOrders, type Order } from "../../sanity/lib/sanity"
 
 export default function OrderManagement() {
   const [orders, setOrders] = useState<Order[]>([])

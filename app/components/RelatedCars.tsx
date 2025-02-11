@@ -4,7 +4,9 @@ import { useState, useEffect } from "react"
 
 import ProductCard from "./ProductCard"
 import { Car } from "./ProductListing"
-import { client } from "@/sanity/lib/client"
+import { client } from "../../sanity/lib/client"
+
+
 
 
 interface RelatedCarsProps {

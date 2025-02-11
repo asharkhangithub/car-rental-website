@@ -1,15 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next"
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["cdn.sanity.io"],
   },
-  env: {
-    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  webpack: (config) => {
+    config.externals = [...(config.externals || []), "canvas", "jsdom"]
+    return config
   },
 }
 
-module.exports = nextConfig
-
+export default nextConfig
 

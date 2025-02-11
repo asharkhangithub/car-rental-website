@@ -6,8 +6,9 @@ import Image from "next/image"
 import RelatedCars from "./RelatedCars"
 import CarSpecifications from "./CarSpecifications"
 import BookingForm from "./BookingForm"
-import { urlForImage } from "@/sanity/lib/sanity"
+
 import { Car } from "./ProductListing"
+import { urlForImage } from "../../sanity/lib/sanity"
 
 
 interface CarDetailClientProps {

@@ -1,4 +1,4 @@
-import { removeOrder } from "@/sanity/lib/sanity"
+import { removeOrder } from "../../sanity/lib/sanity"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 

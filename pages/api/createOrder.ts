@@ -1,5 +1,6 @@
-import { createOrder, Order } from "@/sanity/lib/sanity"
+
 import type { NextApiRequest, NextApiResponse } from "next"
+import { createOrder, Order } from "../../sanity/lib/sanity"
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

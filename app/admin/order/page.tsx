@@ -1,4 +1,5 @@
-import AdminOrderManagement from "@/app/components/AdminOrderManagement";
+import AdminOrderManagement from "../../components/AdminOrderManagement";
+
 
 
 export default function AdminOrdersPage() {
